@@ -1,0 +1,152 @@
+```java
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class SubjectTest {
+
+    private final Subject.NumberTool numberTool = new Subject().new NumberTool();
+    private final Subject.TextTool textTool = new Subject().new TextTool();
+    private final Subject.ParameterTool parameterTool = new Subject().new ParameterTool();
+
+    @Test
+    public void test0001() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression0_Test0.test0001");
+        assertTrue(numberTool.isDigits("123456"));
+    }
+
+    @Test
+    public void test0002() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression0_Test0.test0002");
+        assertFalse(numberTool.isDigits("123a56"));
+    }
+
+    @Test
+    public void test0003() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression0_Test0.test0003");
+        assertFalse(numberTool.isDigits(null));
+    }
+
+    @Test
+    public void test0004() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression0_Test0.test0004");
+        assertFalse(numberTool.isDigits(""));
+    }
+
+    @Test
+    public void test0005() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression0_Test0.test0005");
+        assertTrue(numberTool.isDigits("0"));
+    }
+
+    @Test
+    public void test0006() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression0_Test0.test0006");
+        assertTrue(numberTool.isDigits("9876543210"));
+    }
+
+    @Test
+    public void test0007() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression0_Test0.test0007");
+        assertEquals("Hello", textTool.unescapeJava("Hello"));
+    }
+
+    @Test
+    public void test0008() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression0_Test0.test0008");
+        assertEquals("Hello\nWorld", textTool.unescapeJava("Hello\\nWorld"));
+    }
+
+    @Test
+    public void test0009() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression0_Test0.test0009");
+        assertEquals("Hello\tWorld", textTool.unescapeJava("Hello\\tWorld"));
+    }
+
+    @Test
+    public void test0010() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression0_Test0.test0010");
+        assertEquals("Hello\\World", textTool.unescapeJava("Hello\\\\World"));
+    }
+
+    @Test
+    public void test0011() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression0_Test0.test0011");
+        assertEquals("Hello'World", textTool.unescapeJava("Hello\\'World"));
+    }
+
+    @Test
+    public void test0012() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression0_Test0.test0012");
+        assertEquals("Hello\"World", textTool.unescapeJava("Hello\\\"World"));
+    }
+
+    @Test
+    public void test0013() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression0_Test0.test0013");
+        assertEquals("Hello\u1234World", textTool.unescapeJava("Hello\\u1234World"));
+    }
+
+    @Test
+    public void test0014() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression0_Test0.test0014");
+        assertFalse(textTool.regionMatches("HelloWorld", false, 0, "hello", 0, 5));
+    }
+
+    @Test
+    public void test0015() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression0_Test0.test0015");
+        assertTrue(textTool.regionMatches("HelloWorld", true, 0, "hello", 0, 5));
+    }
+
+    @Test
+    public void test0016() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression0_Test0.test0016");
+        assertFalse(textTool.regionMatches("HelloWorld", false, 0, "World", 0, 5));
+    }
+
+    @Test
+    public void test0017() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression0_Test0.test0017");
+        assertTrue(textTool.regionMatches("HelloWorld", false, 5, "World", 0, 5));
+    }
+
+    @Test
+    public void test0018() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression0_Test0.test0018");
+        assertFalse(textTool.regionMatches("HelloWorld", false, 0, "World", 0, 4));
+    }
+
+    @Test
+    public void test0019() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression0_Test0.test0019");
+        assertTrue(textTool.regionMatches("HelloWorld", true, 0, "hello", 0, 5));
+    }
+
+    @Test
+    public void test0020() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "Regression0_Test0.test0020");
+        // Test for parseQuotedToken method would require additional setup
+        // This is a placeholder as the method is private
+    }
+}
+```
