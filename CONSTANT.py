@@ -1,7 +1,7 @@
 JAVA_FILE_PATH = "/home/shurui/projects/test_case_generation/target/Subject.java"
 XML_FILE_PATH = "/home/shurui/projects/test_case_generation/target/24Assign1all.xml"
-OPENAI_API_KEY = "sk-gPCU8A8EPneY3GEJrbPcqpo2amBtfabNJxklb72SL7zxT7f6"
-DEEPSEEK_API_KEY = "sk-gPCU8A8EPneY3GEJrbPcqpo2amBtfabNJxklb72SL7zxT7f6"
+OPENAI_API_KEY = ""
+DEEPSEEK_API_KEY = ""
 
 TEST_TIME_LIMIT = 50
 TEST_CASE_LIMIT = 33
